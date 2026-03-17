@@ -21,3 +21,13 @@ if int(OWNER) not in AUTH_USERS:
 #WEBHOOK = True  # Don't change this
 #PORT = int(os.environ.get("PORT", 8080))  # Default to 8000 if not set
 
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return "Hello Flask!"
+
+if __name__ == '__main__':
+    app.run(debug=True, port=8000)
